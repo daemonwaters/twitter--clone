@@ -1,0 +1,19 @@
+/*colors*/
+$primary-Blue:#1C8CD8;
+$clr-apple-btn:#E6E6E6;
+$clr-sign-in-textorlogo:#D9D9D9;
+$clr-sign-in-bg:#242D33;
+$clr-blured-dark:#202327;
+
+
+
+
+
+@mixin flex-center($gap) {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+}
+
+
+

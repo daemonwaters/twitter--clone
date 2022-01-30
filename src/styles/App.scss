@@ -1,0 +1,625 @@
+@import "tools";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .img-wrapper {
+    height: 100%;
+    background-image: url("../media/Sign-in/hero.png");
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-items: center;
+    svg {
+      font-size: 20rem;
+      fill: #fff;
+    }
+  }
+
+  .welcome-content {
+    background: #000;
+    color: $clr-sign-in-textorlogo;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    & > svg {
+      font-size: 2.5rem;
+    }
+    .text-area {
+      h1 {
+        font-size: 4rem;
+        margin: 2.5rem 0;
+      }
+      h2 {
+        font-size: 2.3rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .btn-area {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.6rem;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    & > p {
+      margin: 0.8rem 0;
+      width: 50%;
+      font-size: 0.85rem;
+      span {
+        color: $primary-Blue;
+      }
+    }
+  }
+}
+
+.button-comp {
+  @include flex-center(0.6rem);
+  justify-content: center;
+  padding: 0.6rem 1.8rem;
+  width: 19rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  background: #fff;
+
+  svg {
+    font-size: 1.1em;
+  }
+}
+
+.or-comp {
+  margin-left: 9.5rem;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background: #333;
+    width: 130px;
+    height: 1px;
+    left: 130%;
+    top: 60%;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background: #333;
+    width: 130px;
+    height: 1px;
+    right: 130%;
+    top: 60%;
+  }
+}
+
+.sign-in {
+  height: 100vh;
+  background: $clr-sign-in-bg;
+  display: grid;
+  place-items: center;
+  color: #fff;
+
+  .sign-in-content {
+    background: #000;
+    padding: 4rem 0;
+    width: 30%;
+    margin: 0 auto;
+    @include flex-center(1rem);
+    flex-direction: column;
+    border-radius: 1rem;
+    & > svg {
+      font-size: 2rem;
+    }
+    h3 {
+      align-self: flex-start;
+      margin-left: 12%;
+      padding: 1rem 0;
+    }
+  }
+}
+
+.timeline {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr;
+  background: #000;
+  color: #fff;
+  overflow-y: hidden;
+  .tweets {
+    border-left: solid 1px #222;
+    border-right: solid 1px #222;
+    overflow-y: scroll;
+    h3 {
+      margin: 0.5rem 1rem;
+    }
+  }
+}
+
+.add-tweet {
+  display: flex;
+  padding: 0.8rem 1rem;
+  gap: 0.5rem;
+  border-bottom: solid 1px #222;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .tweet-input {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.4rem;
+    & > input {
+      width: 100%;
+      padding: 0.8rem 0.4rem;
+      border: none;
+      background: transparent;
+      color: #fff;
+      outline: none;
+      &::placeholder {
+        font-size: 1.05rem;
+        padding-left: 0.4rem;
+      }
+    }
+
+    .tweet-actions {
+      @include flex-center(0.5rem);
+      width: 100%;
+      button {
+        max-width: 20%;
+        margin-left: auto;
+      }
+      svg {
+        font-size: 1.2rem;
+        color: $primary-Blue;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.left {
+  & > div {
+    height: 100%;
+    padding: 0.8rem 0 0.8rem 2rem;
+    & > svg {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      li {
+        @include flex-center(0.6rem);
+        padding: 0.4rem 0;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color ease;
+        text-transform: capitalize;
+        a {
+          color: inherit;
+          @include flex-center(0.6rem);
+          text-decoration: none;
+        }
+        &:hover {
+          color: $primary-Blue;
+        }
+      }
+    }
+
+    button {
+      margin: 1rem 0;
+      max-width: 80%;
+    }
+  }
+}
+
+.small-profile,
+.r-row {
+  display: flex;
+  gap: 0.6rem;
+  padding-right: 2rem;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  div {
+    p:nth-of-type(2) {
+      color: #666;
+    }
+  }
+  span {
+    margin-left: auto;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  button {
+    max-width: 4rem;
+    margin-left: auto;
+  }
+}
+
+.right {
+  background-color: #000;
+  & > div {
+    width: 92%;
+    margin: 0 auto;
+    padding: 0.6rem 0;
+  }
+}
+
+.search {
+  @include flex-center(0.5rem);
+  background: $clr-blured-dark;
+  color: #444;
+  border-radius: 18px;
+  input {
+    padding: 0.8rem 0.4rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 80%;
+    &::placeholder {
+      font-size: 1.05rem;
+    }
+  }
+  svg {
+    margin-left: 1rem;
+  }
+}
+
+.trends {
+  margin-top: 1rem;
+  background: $clr-blured-dark;
+  border-radius: 10px;
+  padding: 0.8rem;
+  header {
+    @include flex-center(0);
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+}
+
+.trend {
+  @include flex-center(0);
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  cursor: pointer;
+  h4 {
+    font-weight: 400;
+    margin: 0.1rem 0;
+  }
+  span {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr;
+  height: 100vh;
+  background: #000;
+  overflow-y: hidden;
+  color: #fff;
+  .main-col {
+    border-left: solid 1px #222;
+    border-right: solid 1px #222;
+    overflow-y: scroll;
+
+    & > header {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+    }
+  }
+}
+
+.top-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.top-section svg {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 0.9rem;
+}
+
+.top-section-text {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin-left: 1.5rem;
+  gap: 0.2rem;
+}
+
+.top-section-text h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: -0.3rem;
+}
+
+.top-section-text p {
+  font-size: 0.95rem;
+  margin-left: 0.1rem;
+}
+
+.banner {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  label {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+    input {
+      visibility: hidden;
+      cursor: normal;
+    }
+    span {
+      cursor: pointer;
+      font-size: 2rem;
+    }
+  }
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+  margin: 0 0.6rem;
+  gap: 0.5rem;
+  position: absolute;
+  top: 70%;
+}
+
+.user-info .avatar {
+  position: relative;
+  width: max-content;
+  border-radius: 50%;
+}
+
+.user-info .avatar img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.edit-name {
+  display: flex;
+  flex-direction: column;
+  & > div {
+    @include flex-center(0.6rem);
+  }
+  p {
+    color: rgb(138, 133, 133);
+    margin-top: 0.2rem;
+  }
+}
+
+.edit-bio {
+  div {
+    @include flex-center(0.6rem);
+    input {
+      outline: none;
+      border: none;
+      background: transparent;
+      border-bottom: solid 2px #222;
+      width: 40%;
+      color: #fff;
+      padding: 0.4rem;
+    }
+    span {
+      cursor: pointer;
+      svg {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.user-info .bio-signs {
+  color: rgb(138, 133, 133);
+  @include flex-center(1rem);
+  span {
+    @include flex-center(0.4rem);
+  }
+}
+
+.follo {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.follo span {
+  color: rgb(138, 133, 133);
+  font-weight: 700;
+  margin-right: 0.3rem;
+}
+
+.tabs {
+  ul {
+    list-style: none;
+    display: flex;
+    margin-top: 0.8rem;
+    gap: 2rem;
+    li {
+      padding: 0 0.6rem;
+      cursor: pointer;
+      &:hover {
+        color: rgb(138, 133, 133);
+      }
+    }
+  }
+}
+
+.user-info .avatar .layer {
+  width: 140px;
+  height: 140px;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.user-info .avatar:hover .layer {
+  opacity: 0.2;
+}
+
+.you-might-like {
+  color: #fff;
+  height: 30vh;
+  background: $clr-blured-dark;
+  border-radius: 10px;
+  padding: 0.6rem;
+  margin-top: 1rem;
+  .recommended-users {
+    & > p {
+      margin: 4rem;
+    }
+  }
+}
+
+.spinner {
+  height: 100vh;
+  display: flex;
+  background: #101d24;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  svg {
+    font-size: 10rem;
+    color: cyan;
+    animation: animation 4s linear infinite;
+  }
+}
+
+.tweet {
+  padding: 1rem;
+  background: transparent;
+  border: solid 1px #222;
+  cursor: normal;
+  div {
+    display: flex;
+    gap: 0.6rem;
+    img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+    .tweet-body {
+      display: flex;
+      flex-direction: column;
+      header {
+        @include flex-center(0.4rem);
+        span {
+          color: #444;
+          &:nth-of-type(2) {
+            text-transform: capitalize;
+          }
+        }
+      }
+      footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        .tweet-actions {
+          @include flex-center(5.5rem);
+          justify-content: flex-sart;
+          span {
+            @include flex-center(0.2rem);
+          }
+          svg {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.my-tweets {
+  margin-top: 17rem;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  .add-tweet {
+    background: $clr-blured-dark;
+    border-radius: 6px;
+  }
+  span {
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    font-size: 2rem;
+    color: #fff;
+  }
+}
+
+@keyframes animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,928 @@
+/*colors*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.welcome .img-wrapper {
+  height: 100%;
+  background-image: url("../media/Sign-in/hero.png");
+  background-size: cover;
+  background-position: center;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.welcome .img-wrapper svg {
+  font-size: 20rem;
+  fill: #fff;
+}
+
+.welcome .welcome-content {
+  background: #000;
+  color: #D9D9D9;
+  padding: 2rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.welcome .welcome-content > svg {
+  font-size: 2.5rem;
+}
+
+.welcome .welcome-content .text-area h1 {
+  font-size: 4rem;
+  margin: 2.5rem 0;
+}
+
+.welcome .welcome-content .text-area h2 {
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+}
+
+.welcome .welcome-content .btn-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.welcome .welcome-content .btn-area a {
+  text-decoration: none;
+}
+
+.welcome .welcome-content > p {
+  margin: 0.8rem 0;
+  width: 50%;
+  font-size: 0.85rem;
+}
+
+.welcome .welcome-content > p span {
+  color: #1C8CD8;
+}
+
+.button-comp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.6rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.6rem 1.8rem;
+  width: 19rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  background: #fff;
+}
+
+.button-comp svg {
+  font-size: 1.1em;
+}
+
+.or-comp {
+  margin-left: 9.5rem;
+  position: relative;
+}
+
+.or-comp::before {
+  content: "";
+  position: absolute;
+  background: #333;
+  width: 130px;
+  height: 1px;
+  left: 130%;
+  top: 60%;
+}
+
+.or-comp::after {
+  content: "";
+  position: absolute;
+  background: #333;
+  width: 130px;
+  height: 1px;
+  right: 130%;
+  top: 60%;
+}
+
+.sign-in {
+  height: 100vh;
+  background: #242D33;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.sign-in .sign-in-content {
+  background: #000;
+  padding: 4rem 0;
+  width: 30%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1rem;
+}
+
+.sign-in .sign-in-content > svg {
+  font-size: 2rem;
+}
+
+.sign-in .sign-in-content h3 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 12%;
+  padding: 1rem 0;
+}
+
+.timeline {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1.5fr;
+      grid-template-columns: 1fr 2fr 1.5fr;
+  background: #000;
+  color: #fff;
+  overflow-y: hidden;
+}
+
+.timeline .tweets {
+  border-left: solid 1px #222;
+  border-right: solid 1px #222;
+  overflow-y: scroll;
+}
+
+.timeline .tweets h3 {
+  margin: 0.5rem 1rem;
+}
+
+.add-tweet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.8rem 1rem;
+  gap: 0.5rem;
+  border-bottom: solid 1px #222;
+}
+
+.add-tweet img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.add-tweet .tweet-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  gap: 0.4rem;
+}
+
+.add-tweet .tweet-input > input {
+  width: 100%;
+  padding: 0.8rem 0.4rem;
+  border: none;
+  background: transparent;
+  color: #fff;
+  outline: none;
+}
+
+.add-tweet .tweet-input > input::-webkit-input-placeholder {
+  font-size: 1.05rem;
+  padding-left: 0.4rem;
+}
+
+.add-tweet .tweet-input > input:-ms-input-placeholder {
+  font-size: 1.05rem;
+  padding-left: 0.4rem;
+}
+
+.add-tweet .tweet-input > input::-ms-input-placeholder {
+  font-size: 1.05rem;
+  padding-left: 0.4rem;
+}
+
+.add-tweet .tweet-input > input::placeholder {
+  font-size: 1.05rem;
+  padding-left: 0.4rem;
+}
+
+.add-tweet .tweet-input .tweet-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.add-tweet .tweet-input .tweet-actions button {
+  max-width: 20%;
+  margin-left: auto;
+}
+
+.add-tweet .tweet-input .tweet-actions svg {
+  font-size: 1.2rem;
+  color: #1C8CD8;
+  cursor: pointer;
+}
+
+.left > div {
+  height: 100%;
+  padding: 0.8rem 0 0.8rem 2rem;
+}
+
+.left > div > svg {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.left > div ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.8rem;
+}
+
+.left > div ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  -webkit-transition: color ease;
+  transition: color ease;
+  text-transform: capitalize;
+}
+
+.left > div ul li a {
+  color: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.left > div ul li:hover {
+  color: #1C8CD8;
+}
+
+.left > div button {
+  margin: 1rem 0;
+  max-width: 80%;
+}
+
+.small-profile,
+.r-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.6rem;
+  padding-right: 2rem;
+}
+
+.small-profile img,
+.r-row img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+.small-profile div p:nth-of-type(2),
+.r-row div p:nth-of-type(2) {
+  color: #666;
+}
+
+.small-profile span,
+.r-row span {
+  margin-left: auto;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.small-profile button,
+.r-row button {
+  max-width: 4rem;
+  margin-left: auto;
+}
+
+.right {
+  background-color: #000;
+}
+
+.right > div {
+  width: 92%;
+  margin: 0 auto;
+  padding: 0.6rem 0;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  background: #202327;
+  color: #444;
+  border-radius: 18px;
+}
+
+.search input {
+  padding: 0.8rem 0.4rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 80%;
+}
+
+.search input::-webkit-input-placeholder {
+  font-size: 1.05rem;
+}
+
+.search input:-ms-input-placeholder {
+  font-size: 1.05rem;
+}
+
+.search input::-ms-input-placeholder {
+  font-size: 1.05rem;
+}
+
+.search input::placeholder {
+  font-size: 1.05rem;
+}
+
+.search svg {
+  margin-left: 1rem;
+}
+
+.trends {
+  margin-top: 1rem;
+  background: #202327;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.trends header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.trend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.4rem 0;
+  cursor: pointer;
+}
+
+.trend h4 {
+  font-weight: 400;
+  margin: 0.1rem 0;
+}
+
+.trend span {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.profile {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 1.5fr;
+      grid-template-columns: 1fr 2fr 1.5fr;
+  height: 100vh;
+  background: #000;
+  overflow-y: hidden;
+  color: #fff;
+}
+
+.profile .main-col {
+  border-left: solid 1px #222;
+  border-right: solid 1px #222;
+  overflow-y: scroll;
+}
+
+.profile .main-col > header {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: relative;
+}
+
+.top-section {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-section svg {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 0.9rem;
+}
+
+.top-section-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.5rem;
+  margin-left: 1.5rem;
+  gap: 0.2rem;
+}
+
+.top-section-text h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: -0.3rem;
+}
+
+.top-section-text p {
+  font-size: 0.95rem;
+  margin-left: 0.1rem;
+}
+
+.banner {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.banner label {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.banner label input {
+  visibility: hidden;
+  cursor: normal;
+}
+
+.banner label span {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 0.5rem;
+  margin: 0 0.6rem;
+  gap: 0.5rem;
+  position: absolute;
+  top: 70%;
+}
+
+.user-info .avatar {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 50%;
+}
+
+.user-info .avatar img {
+  width: 140px;
+  height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.edit-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.edit-name > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.6rem;
+}
+
+.edit-name p {
+  color: #8a8585;
+  margin-top: 0.2rem;
+}
+
+.edit-bio div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.6rem;
+}
+
+.edit-bio div input {
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: solid 2px #222;
+  width: 40%;
+  color: #fff;
+  padding: 0.4rem;
+}
+
+.edit-bio div span {
+  cursor: pointer;
+}
+
+.edit-bio div span svg {
+  font-size: 1rem;
+}
+
+.user-info .bio-signs {
+  color: #8a8585;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.user-info .bio-signs span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.4rem;
+}
+
+.follo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.follo span {
+  color: #8a8585;
+  font-weight: 700;
+  margin-right: 0.3rem;
+}
+
+.tabs ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0.8rem;
+  gap: 2rem;
+}
+
+.tabs ul li {
+  padding: 0 0.6rem;
+  cursor: pointer;
+}
+
+.tabs ul li:hover {
+  color: #8a8585;
+}
+
+.user-info .avatar .layer {
+  width: 140px;
+  height: 140px;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.user-info .avatar:hover .layer {
+  opacity: 0.2;
+}
+
+.you-might-like {
+  color: #fff;
+  height: 30vh;
+  background: #202327;
+  border-radius: 10px;
+  padding: 0.6rem;
+  margin-top: 1rem;
+}
+
+.you-might-like .recommended-users > p {
+  margin: 4rem;
+}
+
+.spinner {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #101d24;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.spinner svg {
+  font-size: 10rem;
+  color: cyan;
+  -webkit-animation: animation 4s linear infinite;
+          animation: animation 4s linear infinite;
+}
+
+.tweet {
+  padding: 1rem;
+  background: transparent;
+  border: solid 1px #222;
+  cursor: normal;
+}
+
+.tweet div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.tweet div img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+}
+
+.tweet div .tweet-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tweet div .tweet-body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.4rem;
+}
+
+.tweet div .tweet-body header span {
+  color: #444;
+}
+
+.tweet div .tweet-body header span:nth-of-type(2) {
+  text-transform: capitalize;
+}
+
+.tweet div .tweet-body footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.2rem;
+}
+
+.tweet div .tweet-body footer .tweet-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5.5rem;
+  -webkit-box-pack: flex-sart;
+      -ms-flex-pack: flex-sart;
+          justify-content: flex-sart;
+}
+
+.tweet div .tweet-body footer .tweet-actions span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.2rem;
+}
+
+.tweet div .tweet-body footer .tweet-actions svg {
+  cursor: pointer;
+}
+
+.my-tweets {
+  margin-top: 17rem;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal .add-tweet {
+  background: #202327;
+  border-radius: 6px;
+}
+
+.modal span {
+  position: absolute;
+  top: 30%;
+  right: 30%;
+  font-size: 2rem;
+  color: #fff;
+}
+
+@-webkit-keyframes animation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes animation {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=App.css.map */
